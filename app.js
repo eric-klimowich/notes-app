@@ -1,16 +1,19 @@
 const chalk = require('chalk')
+const yargs = require('yargs')
 const getNotes = require('./notes.js')
 
 const notes = getNotes()
 
 console.log(chalk.green.inverse.bold('Success!'))
-
 console.log(notes)
 
+console.log(process.argv)
+console.log(yargs.argv)
 
-// const fs = require('fs')
+const command = process.argv[2]
 
-// fs.writeFileSync('notes.txt', 'This file was created by Node.js!')
-// fs.writeFileSync('notes.txt', 'My name is Eric.')
-
-// fs.appendFileSync('notes.txt', ' I now live in Cortlandt Manor, NY.')
+if (command === 'add') {
+    console.log('Adding note!')
+} else if (command === 'remove') {
+    console.log('Removing note!')
+}
