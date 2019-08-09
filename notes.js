@@ -3,6 +3,10 @@ const chalk = require('chalk')
 
 const getNotes = () => 'Your notes....'
 
+const readNote = title => {
+    console.log(title)
+}
+
 const listNotes = () => {
     const notes = loadNotes()
     
@@ -64,6 +68,7 @@ module.exports = {
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 }
 // module.exports = getNotes
