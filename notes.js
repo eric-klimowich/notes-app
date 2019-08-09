@@ -8,7 +8,7 @@ const listNotes = () => {
     
     console.log(chalk.blue.inverse('Your notes!'))
     return notes.forEach(note => {
-        console.log(note.title + ': ' + note.body)
+        console.log(note.title)
     });
 }
 
