@@ -4,7 +4,12 @@ const chalk = require('chalk')
 const getNotes = () => 'Your notes....'
 
 const listNotes = () => {
-    console.log(chalk.blue('Your notes'))
+    const notes = loadNotes()
+    
+    console.log(chalk.blue.inverse('Your notes!'))
+    return notes.forEach(note => {
+        console.log(note.title + ': ' + note.body)
+    });
 }
 
 const removeNote = title => {
