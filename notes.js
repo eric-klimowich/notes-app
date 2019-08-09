@@ -4,7 +4,15 @@ const chalk = require('chalk')
 const getNotes = () => 'Your notes....'
 
 const readNote = title => {
-    console.log(title)
+    const notes = loadNotes()
+    const noteToRead = notes.find(note => note.title === title)
+
+    if (noteToRead) {
+        console.log(chalk.blue.inverse('Your note!'))
+        console.log(chalk.inverse(noteToRead.title + ':') + ' ' + noteToRead.body)
+    } else {
+        console.log(chalk.red.inverse('Did not find a note with the title ' + title + '!'))
+    }
 }
 
 const listNotes = () => {
